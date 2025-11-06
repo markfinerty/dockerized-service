@@ -17,5 +17,5 @@ jobs:
         run: docker build . -t markfinerty/dockerized-express:latest
       - name: push image to DockerHub
         run: |
-          docker login -u markfinerty -p ${{ secrets/DOCKER_HUB_TOKEN }}
+          docker login -u markfinerty -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push markfinerty/dockerized-express:latest
