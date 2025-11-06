@@ -7,7 +7,7 @@ The app is fully containerized with Docker and automatically deployed to an AWS 
 
 ## Project Reference
 
-The project template followed: https://roadmap.sh/projects/dockerized-service-deployment?fl=1
+The project template followed: https://roadmap.sh/projects/dockerized-service-deployment
 
 ---
 
