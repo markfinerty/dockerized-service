@@ -60,13 +60,10 @@ jobs:
           TAG: ${{ steps.meta.outputs.short_sha }}
           IMAGE: ${{ env.IMAGE_NAME }}
         run: |
-          ssh -i key.pem -o StrictHostKeyChecking=no -p "$PORT" "$USER@$HOST" << 'EOF'
+          ssh -i key.pem -o StrictHostKeyChecking=no -p "$PORT" "$USER@$HOST" << EOF
             set -e
             cd ~/app
-
-            # Export TAG for compose substitution (docker-compose.yml uses ${TAG})
-            export TAG='${TAG}'
-
+            
             docker compose pull
             docker compose up -d
 
