@@ -36,6 +36,7 @@ jobs:
           HOST: ${{ secrets.EC2_HOST }}
           USER: ${{ secrets.EC2_USER }}
           PORT: ${{ secrets.EC2_PORT || 22 }}
+          # set -e = if any command returns a non-zero exit code, the script stops right there
         run: |
           ssh -i key.pem -o StrictHostKeyChecking=no -p "$PORT" "$USER@$HOST" <<EOF
             set -e
